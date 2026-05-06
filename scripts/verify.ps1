@@ -58,3 +58,13 @@ foreach ($pathPattern in $knownPaths) {
 go test ./...
 
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-tracepipe-detail.ps1
+
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-tracepipe-properties.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-tracepipe-golden.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

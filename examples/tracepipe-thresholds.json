@@ -1,0 +1,17 @@
+{
+  "repo": "tracepipe",
+  "thresholds": {
+    "signal": 3,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 3,
+    "ship": 173,
+    "watch": 120
+  },
+  "terms": [
+    "span volume",
+    "latency skew",
+    "signal loss",
+    "incident shape"
+  ]
+}
