@@ -1,0 +1,73 @@
+{
+  "repo": "tracepipe",
+  "language": "Go",
+  "category": "Observability",
+  "goal": "Reduce structured logs into trace spans and service latency summaries.",
+  "review_model": {
+    "terms": [
+      "span volume",
+      "latency skew",
+      "signal loss",
+      "incident shape"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "span volume",
+      "signal": 66,
+      "slack": 29,
+      "drag": 11,
+      "confidence": 47,
+      "score": 175,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "latency skew",
+      "signal": 56,
+      "slack": 51,
+      "drag": 12,
+      "confidence": 58,
+      "score": 185,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "signal loss",
+      "signal": 83,
+      "slack": 24,
+      "drag": 11,
+      "confidence": 73,
+      "score": 230,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "incident shape",
+      "signal": 74,
+      "slack": 48,
+      "drag": 16,
+      "confidence": 64,
+      "score": 212,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "span volume",
+      "signal": 60,
+      "slack": 41,
+      "drag": 13,
+      "confidence": 62,
+      "score": 184,
+      "lane": "ship"
+    }
+  ]
+}
